@@ -10,7 +10,3 @@ add_subdirectory(glad)
 
 # glm
 add_subdirectory(glm)
-
-# json
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-add_subdirectory(json)

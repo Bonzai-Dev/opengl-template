@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(voxel-engine)
+project(opengl-template)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
@@ -15,11 +15,4 @@ add_executable(${CMAKE_PROJECT_NAME} ${PROJECT_SOURCES})
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Linking
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL3::SDL3 stb glad glm)
-
-# Resource files
-add_custom_target(
-    PROJECT_ASSETS
-    COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different "${CMAKE_SOURCE_DIR}/res" "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
-)
-add_dependencies(${PROJECT_NAME} PROJECT_ASSETS)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL3::SDL3 glad)
